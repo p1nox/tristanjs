@@ -68,6 +68,16 @@ angular.module('koan.common').factory('api', function ($rootScope, $http, $windo
     }
   };
 
+  api.remDas = {
+    list: function () {
+      return $http({method: 'GET', url: apiBase + '/remDas', headers: headers});
+    },
+    create: function(remDa){
+      return $http({method: 'POST', url: apiBase + '/remDas', data: remDa, headers: headers});
+    },
+    created: event()
+  };
+
   api.debug = {
     clearDatabase: function () {
       return $http({method: 'POST', url: apiBase + '/debug/clearDatabase', headers: headers});
