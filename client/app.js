@@ -9,6 +9,7 @@ angular
       'ngRoute',
       'koan.common',
       'koan.home',
+      'koan.remda',
       'koan.profile'
     ])
 
