@@ -42,6 +42,6 @@ function *getRemDa(user_id) {
   var remDa = yield mongo.remDas.findOne({userId: userId, url: userUrl});
 
   if (remDa) {
-    this.body = remDa;
+    this.body = remDa.content;
   }
 }
