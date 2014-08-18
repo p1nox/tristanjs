@@ -8,7 +8,7 @@ Why Tristan? [Tristan da Cunha](http://en.wikipedia.org/wiki/Tristan_da_Cunha) i
 
 ## Stack
 
-[KOAN](http://koanjs.com) including:
+[KOAN](http://koanjs.com):
 
 * **Client**: AngularJS and Twitter Bootstrap with pure html partials (no server side rendering so it's fully static and CDN ready). Bower packages are located at `client\bower_packages`.
 * **Server**: Koa for RESTful API on top of Node.js v0.11+ with the use of `--harmony` and generators.
@@ -19,11 +19,11 @@ Why Tristan? [Tristan da Cunha](http://en.wikipedia.org/wiki/Tristan_da_Cunha) i
 
 ## Getting Started
 
-Make sure that you have Node.js (v0.11 or above) and MongoDB (running on the default port 27017) installed on your computer. To get started with KOAN stack, do following:
+Make sure that you have Node.js (v0.11 or above) and MongoDB (running on the default port 27017) installed on your computer. To get started with Tristanjs, do following:
 
 ```bash
-git clone --depth 1 https://github.com/soygul/koan.git
-cd koan
+git clone --depth 1 https://github.com/p1nox/tristanjs.git
+cd tristanjs
 npm install
 npm start
 ```
