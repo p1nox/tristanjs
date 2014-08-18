@@ -13,7 +13,7 @@ angular
     .config(function ($routeProvider) {
       $routeProvider
           .when('/', {
-            title: 'KOAN Home',
+            title: 'Tristanjs Home',
             templateUrl: 'modules/home/home.html',
             controller: 'HomeCtrl'
           });

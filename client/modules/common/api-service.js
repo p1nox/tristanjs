@@ -51,23 +51,6 @@ angular.module('koan.common').factory('api', function ($rootScope, $http, $windo
     $rootScope.$apply();
   };
 
-  // api http endpoints and websocket events
-  api.posts = {
-    list: function () {
-      return $http({method: 'GET', url: apiBase + '/posts', headers: headers});
-    },
-    create: function (post) {
-      return $http({method: 'POST', url: apiBase + '/posts', data: post, headers: headers});
-    },
-    created: event(),
-    comments: {
-      create: function (postId, comment) {
-        return $http({method: 'POST', url: apiBase + '/posts/' + postId + '/comments', data: comment, headers: headers});
-      },
-      created: event()
-    }
-  };
-
   api.remDas = {
     list: function () {
       return $http({method: 'GET', url: apiBase + '/remDas', headers: headers});
