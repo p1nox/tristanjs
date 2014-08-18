@@ -12,6 +12,7 @@ var route = require('koa-route'),
 // register koa routes
 exports.init = function (app) {
   app.use(route.get('/api/users/:id/picture', getPicture));
+  app.use(route.get('/api/endpoints/:user_id/*.json', getRemDa));
 };
 
 /**
@@ -19,7 +20,7 @@ exports.init = function (app) {
  * @param id - User ID.
  */
 function *getPicture(id) {
-  id = parseInt(id);
+  id = parseInt(id, 10);
   var user = yield mongo.users.findOne({_id: id}, {picture: 1});
   if (user) {
     var img = new Buffer(user.picture, 'base64');
@@ -28,5 +29,19 @@ function *getPicture(id) {
       this.set('Cache-Control', 'max-age=' + (config.app.cacheTime / 1000));
     }
     this.body = img;
+  }
+}
+
+function *getRemDa(user_id) {
+  var userId = parseInt(user_id, 10),
+  url = this.request.url;
+
+  var posFirstCharEndpoint = url.indexOf('/', 15); // 15 == indexOf(userId)
+  var userUrl = url.substring(posFirstCharEndpoint, url.length);
+
+  var remDa = yield mongo.remDas.findOne({userId: userId, url: userUrl});
+
+  if (remDa) {
+    this.body = remDa.content;
   }
 }

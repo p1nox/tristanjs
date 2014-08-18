@@ -1,0 +1,40 @@
+
+<h3>Remote Data</h3>
+
+<div class="message-box">
+
+  <form ng-submit="createRemData($event)">
+
+    <label>Path</label>
+    <input type="text" class="form-control" name="url" placeholder="/curriculum/linkedin (without '.json')"
+     ng-model="dataBox.url"
+     ng-disabled="dataBox.disabled">
+
+    <br>
+    <label>Data</label>
+    <textarea msd-elastic class="form-control" name="content" placeholder="Paste your JSON here..."
+     ng-model="dataBox.content"
+     ng-disabled="dataBox.disabled"></textarea>
+
+    <br>
+    <div class="message-box-tools">
+      <input type="submit" class="btn btn-default btn-sm pull-right" value="Create">
+    </div>
+
+  </form>
+
+  <br>
+  <hr>
+  <h4>Your data</h4>
+
+  <ul>
+    <li ng-repeat="remDas in userRemDas">
+      <p>
+        <a href="{{remDas.endpoint}}" target="_new">{{remDas.endpoint}}</a>
+      </p>
+
+      {{remDas.content}}
+    </li>
+  </ul>
+
+</div>

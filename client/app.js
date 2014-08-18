@@ -9,7 +9,7 @@ angular
       'ngRoute',
       'koan.common',
       'koan.home',
-      'koan.profile'
+      'koan.remda'
     ])
 
     .config(function ($routeProvider, $locationProvider) {
