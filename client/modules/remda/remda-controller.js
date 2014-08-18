@@ -29,7 +29,8 @@ angular.module('koan.remda').controller('RemDaCtrl', function ($scope, api) {
 
     api.remDas.create({url: $scope.dataBox.url, content: $scope.dataBox.content})
     .success(function (remDaId) {
-      $scope.dataBox.message = '';
+      $scope.dataBox.url = '';
+      $scope.dataBox.content = '';
       $scope.dataBox.disabled = false;
       fetchRemDas();
       // show message and go to the remData details
