@@ -35,9 +35,10 @@ function *listRemDas() {
 
 function *createRemDas() {
   var remDa = yield parse(this);
+  remDa.url = remDa.url + '.json';
   remDa.from = this.user;
   remDa.userId = this.user.id
-  remDa.endpoint = '/api/endpoints/'+this.user.id+'/'+remDa.url;
+  remDa.endpoint = '/api/endpoints/' + this.user.id + remDa.url;
   remDa.createdTime = new Date();
 
   var results = yield mongo.remDas.insert(remDa);
