@@ -27,7 +27,7 @@ angular.module('koan.remda').controller('RemDaCtrl', function ($scope, api) {
 
     $scope.dataBox.disabled = true;
 
-    api.remDas.create({content: $scope.dataBox.content})
+    api.remDas.create({url: $scope.dataBox.url, content: $scope.dataBox.content})
     .success(function (remDaId) {
       console.log("@@@@");
       console.log(remDaId);
